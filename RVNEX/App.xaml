@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application
+    x:Class="RVNEX.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RVNEX">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Mutable semantic brushes are updated by ThemePalette for app/system theme changes. -->
+            <SolidColorBrush x:Key="RvnexBackgroundBrush" Color="#171D21" />
+            <SolidColorBrush x:Key="RvnexSurfaceBrush" Color="#20282D" />
+            <SolidColorBrush x:Key="RvnexSurfaceAltBrush" Color="#263238" />
+            <SolidColorBrush x:Key="RvnexSurfaceRaisedBrush" Color="#2D3A40" />
+            <SolidColorBrush x:Key="RvnexBorderBrush" Color="#3B4A50" />
+            <SolidColorBrush x:Key="RvnexTextPrimaryBrush" Color="#EAF0F2" />
+            <SolidColorBrush x:Key="RvnexTextSecondaryBrush" Color="#B2C0C4" />
+            <SolidColorBrush x:Key="RvnexTextTertiaryBrush" Color="#91A2A7" />
+            <SolidColorBrush x:Key="RvnexAccentBrush" Color="#3CC8BE" />
+            <SolidColorBrush x:Key="RvnexAccentHoverBrush" Color="#64D8CF" />
+            <SolidColorBrush x:Key="RvnexAccentPressedBrush" Color="#1BA59D" />
+            <SolidColorBrush x:Key="RvnexAccentTextBrush" Color="#102322" />
+            <SolidColorBrush x:Key="RvnexButtonFillBrush" Color="#263238" />
+            <SolidColorBrush x:Key="RvnexButtonHoverBrush" Color="#34434A" />
+            <SolidColorBrush x:Key="RvnexButtonPressedBrush" Color="#3D5056" />
+            <SolidColorBrush x:Key="RvnexButtonTextBrush" Color="#EAF0F2" />
+            <SolidColorBrush x:Key="RvnexFocusBrush" Color="#64D8CF" />
+            <SolidColorBrush x:Key="RvnexSelectionBrush" Color="#173A3B" />
+            <SolidColorBrush x:Key="RvnexNavigationIdleBrush" Color="#00263238" />
+            <SolidColorBrush x:Key="RvnexSuccessBrush" Color="#6BD29A" />
+            <SolidColorBrush x:Key="RvnexWarningBrush" Color="#FFD166" />
+            <SolidColorBrush x:Key="RvnexErrorBrush" Color="#FF9298" />
+            <SolidColorBrush x:Key="RvnexDangerFillBrush" Color="#A9343E" />
+            <SolidColorBrush x:Key="RvnexDangerTextBrush" Color="#FFFFFF" />
+
+            <Style x:Key="RvnexButtonBaseStyle" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
+                <Setter Property="MinHeight" Value="34" />
+                <Setter Property="Padding" Value="12,6" />
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="Background" Value="{ThemeResource RvnexButtonFillBrush}" />
+                <Setter Property="Foreground" Value="{ThemeResource RvnexButtonTextBrush}" />
+                <Setter Property="BorderBrush" Value="{ThemeResource RvnexBorderBrush}" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="FocusVisualPrimaryBrush" Value="{ThemeResource RvnexFocusBrush}" />
+                <Setter Property="FocusVisualSecondaryBrush" Value="{ThemeResource RvnexBackgroundBrush}" />
+            </Style>
+            <Style TargetType="Button" BasedOn="{StaticResource RvnexButtonBaseStyle}" />
+            <Style x:Key="RvnexPrimaryButtonStyle" TargetType="Button" BasedOn="{StaticResource RvnexButtonBaseStyle}">
+                <Setter Property="Background" Value="{ThemeResource RvnexAccentBrush}" />
+                <Setter Property="Foreground" Value="{ThemeResource RvnexAccentTextBrush}" />
+                <Setter Property="BorderBrush" Value="{ThemeResource RvnexAccentBrush}" />
+                <Setter Property="FontWeight" Value="SemiBold" />
+            </Style>
+            <Style x:Key="RvnexDestructiveButtonStyle" TargetType="Button" BasedOn="{StaticResource RvnexButtonBaseStyle}">
+                <Setter Property="Background" Value="{ThemeResource RvnexDangerFillBrush}" />
+                <Setter Property="Foreground" Value="{ThemeResource RvnexDangerTextBrush}" />
+                <Setter Property="BorderBrush" Value="{ThemeResource RvnexDangerFillBrush}" />
+            </Style>
+            <Style x:Key="RvnexNavigationButtonStyle" TargetType="Button" BasedOn="{StaticResource RvnexButtonBaseStyle}">
+                <Setter Property="MinHeight" Value="36" />
+                <Setter Property="Padding" Value="10,5" />
+                <Setter Property="Background" Value="{ThemeResource RvnexNavigationIdleBrush}" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="HorizontalContentAlignment" Value="Left" />
+            </Style>
+
+            <Style x:Key="RvnexTextBoxBaseStyle" TargetType="TextBox" BasedOn="{StaticResource DefaultTextBoxStyle}">
+                <Setter Property="MinHeight" Value="36" />
+                <Setter Property="Padding" Value="10,5" />
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="BorderBrush" Value="{ThemeResource RvnexBorderBrush}" />
+                <Setter Property="FocusVisualPrimaryBrush" Value="{ThemeResource RvnexFocusBrush}" />
+                <Setter Property="FocusVisualSecondaryBrush" Value="{ThemeResource RvnexBackgroundBrush}" />
+            </Style>
+            <Style TargetType="TextBox" BasedOn="{StaticResource RvnexTextBoxBaseStyle}" />
+            <Style x:Key="RvnexPasswordBoxBaseStyle" TargetType="PasswordBox" BasedOn="{StaticResource DefaultPasswordBoxStyle}">
+                <Setter Property="MinHeight" Value="36" />
+                <Setter Property="Padding" Value="10,5" />
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="BorderBrush" Value="{ThemeResource RvnexBorderBrush}" />
+                <Setter Property="FocusVisualPrimaryBrush" Value="{ThemeResource RvnexFocusBrush}" />
+                <Setter Property="FocusVisualSecondaryBrush" Value="{ThemeResource RvnexBackgroundBrush}" />
+            </Style>
+            <Style TargetType="PasswordBox" BasedOn="{StaticResource RvnexPasswordBoxBaseStyle}" />
+            <Style x:Key="RvnexComboBoxBaseStyle" TargetType="ComboBox" BasedOn="{StaticResource DefaultComboBoxStyle}">
+                <Setter Property="MinHeight" Value="36" />
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="BorderBrush" Value="{ThemeResource RvnexBorderBrush}" />
+                <Setter Property="FocusVisualPrimaryBrush" Value="{ThemeResource RvnexFocusBrush}" />
+                <Setter Property="FocusVisualSecondaryBrush" Value="{ThemeResource RvnexBackgroundBrush}" />
+            </Style>
+            <Style TargetType="ComboBox" BasedOn="{StaticResource RvnexComboBoxBaseStyle}" />
+            <Style x:Key="RvnexCheckBoxBaseStyle" TargetType="CheckBox" BasedOn="{StaticResource DefaultCheckBoxStyle}">
+                <Setter Property="MinHeight" Value="30" />
+                <Setter Property="FocusVisualPrimaryBrush" Value="{ThemeResource RvnexFocusBrush}" />
+                <Setter Property="FocusVisualSecondaryBrush" Value="{ThemeResource RvnexBackgroundBrush}" />
+            </Style>
+            <Style TargetType="CheckBox" BasedOn="{StaticResource RvnexCheckBoxBaseStyle}" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
