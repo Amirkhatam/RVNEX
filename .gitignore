@@ -1,0 +1,32 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Signing credentials and certificates
+*.pfx
+*.p12
+*.key
+*.snk
+
+# Local configuration and secrets
+appsettings.*.local.json
+.env
+.env.*
+
+# IDE and OS
+.vscode/
+.DS_Store
+Thumbs.db
